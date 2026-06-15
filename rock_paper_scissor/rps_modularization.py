@@ -21,12 +21,15 @@ terminate
 #eg) 'r' -> 'rock(🪨)'
 
 
+ROCK = 'r'
+PAPER = 'p'
+SCISSOR = 's'
 emojis = {
-    'r':'🪨',
-    'p':'📃',
-    's':'✂️'
+    ROCK:'🪨',
+    PAPER:'📃',
+    SCISSOR:'✂️'
 }
-choices = ('r','p','s')
+choices = tuple((emojis.keys()))
 
 def get_user_choice():
     while True:
@@ -45,9 +48,9 @@ def determine_winner(user_choice, computer_choice):
         print('Tie!')
 
     elif(
-        (user_choice =='r' and computer_choice =='s')
-        or (user_choice=='p' and computer_choice=='r')
-        or (user_choice=='s' and computer_choice=='p')):
+        (user_choice ==ROCK and computer_choice ==SCISSOR)
+        or (user_choice==PAPER and computer_choice==ROCK)
+        or (user_choice==SCISSOR and computer_choice==PAPER)):
         print('You win!')
 
     else:
