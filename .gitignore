@@ -1,3 +1,4 @@
 venv/
 .vscode/
 termcolor/
+qr_generator/
